@@ -1,0 +1,60 @@
+abstract class Shape {
+    int dim1, dim2;
+
+    // Constructor name matches class name (capital S)
+    Shape(int dim1, int dim2) {
+        this.dim1 = dim1;
+        this.dim2 = dim2;
+    }
+
+    abstract void printArea();
+}
+
+class Rectangle extends Shape {
+
+    Rectangle(int length, int breadth) {
+        super(length, breadth);
+    }
+
+    void printArea() {
+        double area = dim1 * dim2;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+class Triangle extends Shape {
+
+    Triangle(int base, int height) {
+        super(base, height);
+    }
+
+    void printArea() {
+        double area = 0.5 * dim1 * dim2;
+        System.out.println("Area of Triangle: " + area);
+    }
+}
+
+class Circle extends Shape {
+
+    Circle(int radius) {
+        super(radius, 0);
+    }
+
+    void printArea() {
+        double area = Math.PI * dim1 * dim1;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+
+// Main program
+public class ShapeMain {
+    public static void main(String[] args) {
+        Rectangle rect = new Rectangle(10, 5);
+        Triangle tri = new Triangle(10, 8);
+        Circle circ = new Circle(7);
+
+        rect.printArea();
+        tri.printArea();
+        circ.printArea();
+    }
+}
