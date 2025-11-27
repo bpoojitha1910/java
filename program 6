@@ -1,3 +1,15 @@
+//*Create a package CIE which has two classes - Personal and
+Internals. The class Personal has members like usn, name,
+sem. The class Internals has an array that stores the internal
+marks scored in five courses of the current semester of the
+student. Create another package SEE which has the class Create a package CIE which has two classes - Personal and
+Internals. The class Personal has members like usn, name,
+sem. The class Internals has an array that stores the internal
+marks scored in five courses of the current semester of the
+student. Create another package SEE which has the class *//
+
+
+
 //under pakage 
 //under cie
 //personal file
