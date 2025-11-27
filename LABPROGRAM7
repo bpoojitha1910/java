@@ -9,12 +9,13 @@ father and son’s age and throws an exception if son’s age is
 
 
 
+import java.util.Scanner;
+
 class WrongAgeException extends Exception {
     WrongAgeException(String message) {
         super(message);
     }
 }
-
 
 class Father {
     int fatherAge;
@@ -24,16 +25,15 @@ class Father {
             throw new WrongAgeException("Father's age cannot be negative!");
         
         this.fatherAge = fatherAge;
-        System.out.println("Father's age is valid: " + fatherAge);
+      
     }
 }
-
 
 class Son extends Father {
     int sonAge;
 
     Son(int fatherAge, int sonAge) throws WrongAgeException {
-        super(fatherAge); 
+        super(fatherAge);
 
         if (sonAge < 0)
             throw new WrongAgeException("Son's age cannot be negative!");
@@ -42,30 +42,26 @@ class Son extends Father {
             throw new WrongAgeException("Son's age cannot be greater than or equal to father's age!");
 
         this.sonAge = sonAge;
-        System.out.println("Son's age is valid: " + sonAge);
+        System.out.println("father's and Son's age is accepted: " + fatherAge+ ',' + sonAge);
     }
 }
 
-
-public class exception {
+public class exception{
     public static void main(String[] args) {
-        try {
-            Son s1 = new Son(40, 20);  
-        } catch (WrongAgeException e) {
-            System.out.println("Exception: " + e.getMessage());
-        }
+        Scanner sc = new Scanner(System.in);
 
         try {
-            Son s2 = new Son(30, 30); 
-        } catch (WrongAgeException e) {
-            System.out.println("Exception: " + e.getMessage());
-        }
+            System.out.print("Enter father's age: ");
+            int fatherAge = sc.nextInt();
 
-        try {
-            Son s3 = new Son(-45, 10);  
+            System.out.print("Enter son's age: ");
+            int sonAge = sc.nextInt();
+
+            Son s = new Son(fatherAge, sonAge);  
+
         } catch (WrongAgeException e) {
             System.out.println("Exception: " + e.getMessage());
         }
+        sc.close();
     }
 }
-
