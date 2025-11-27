@@ -1,3 +1,9 @@
+//*Develop a Java program to create a class Student with
+members usn, name, an array credits and an array marks.
+Include methods to accept and display details and a
+method to calculate SGPA of a student*//
+
+
 import java.util.Scanner;
 class Student
 {
